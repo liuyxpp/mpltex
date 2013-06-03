@@ -1,0 +1,10 @@
+syntax: glob
+docs/_build/*
+dist/*
+mpltex.egg-info/*
+*.pyc
+*.swp
+*.mat
+*.png
+*.bak
+

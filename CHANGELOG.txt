@@ -1,0 +1,14 @@
+mpltex Changelog
+================
+
+Here you can see the full list of changes between each mpltex release.
+
+Version 0.1
+-----------
+
+* Release date to be announced.
+
+Initiating
+----------
+
+* Sep. 19th, 2012
