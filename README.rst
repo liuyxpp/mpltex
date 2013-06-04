@@ -43,7 +43,7 @@ Ask for Help
 * You can directly contact me at liuyxpp@gmail.com.
 * You can join the mailinglist by sending an email to mpltex@librelist.com 
   and replying to the confirmation mail. 
-  To unsubscribe, send a mail to chebpy-unsubscribe@librelist.com 
+  To unsubscribe, send a mail to mpltex-unsubscribe@librelist.com 
   and reply to the confirmation mail.
 
 Contribute
