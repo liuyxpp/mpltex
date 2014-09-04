@@ -13,7 +13,15 @@ import matplotlib as mpl
 
 from .colors import almost_black, brewer_set1
 
-__all__ = ['MPLdecorator', 'lines', 'markers', 'nextlinestyle']
+__all__ = ['MPLdecorator', 'lines', 'markers',
+           'nextlinestyle', 'point2inch',
+           'inch2point', 'GOLDEN_RATIO',
+           'GOLDEN_RATIO2',
+          ]
+
+
+GOLDEN_RATIO = 0.618
+GOLDEN_RATIO2 = 1.618
 
 _colors = itertools.cycle(brewer_set1)
 
@@ -46,6 +54,8 @@ def nextlinestyle(no_line=False, is_line=True, is_marker=True, is_hollow=True):
      :type is_marker: bool
      :param is_hollow: if True, cycle markers including hollow styles.
      :param is_hollow: bool
+     :return: dict of parameters of linestyle
+     :rtype: dict
      """
      color = _colors.next()
      linestyle = lines.next()
@@ -119,3 +129,25 @@ class MPLdecorator:
      def __exit__(self, *args):
           return self.mpl_contexts.pop().__exit__(*args)
 
+def point2inch(npt):
+     """
+     Point to inch converter.
+
+     :param npt: number of points
+     :type npt: integer
+     :return: number of inches corresponding to :param:`npt`
+     :type: double
+     """
+     return npt / 72.0
+
+
+def inch2point(inch):
+     """
+     Inch to point converter.
+
+     :param inch: the length in unit inch
+     :type inch: double
+     :return: number of points corresponding to :param:`inch`
+     :rtype: integer
+     """
+     return int(72.0 * inch)

@@ -33,7 +33,7 @@ def test():
 
     fig.savefig('test_plot')
 
-@mpltex.acs
+@mpltex.presentation
 def test2():
     # Set the random seed for consistency
     np.random.seed(12)
@@ -57,9 +57,13 @@ def test2():
                 #marker=mpltex.markers.next(),
                 #mew=0.15, mec=mpltex.almost_black,
                 #label=str(i))
+        ax.locator_params(nbins=5)
+        ax.set_xlabel('Numer of steps')
+        ax.set_ylabel('Distance')
 
-    plt.legend(loc='best', ncol=4)
+    ax.legend(loc='best', ncol=4)
 
+    fig.tight_layout(pad=0.1)
     fig.savefig('test_plot_scatter')
 
 if __name__ == '__main__':
