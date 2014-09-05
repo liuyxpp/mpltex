@@ -18,7 +18,6 @@ It is obvious now we should choose a DPI that best matches the current working
 screen, so that matplotlib will draw things nicely.
 
 """
-import numpy as np
 
 from .general import MPLdecorator
 from .layout import GOLDEN_RATIO, point2inch

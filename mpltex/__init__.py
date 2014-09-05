@@ -3,7 +3,7 @@
 mpltex
 ======
 
-mpltex is a python package which providds an easy way to change matplotlib configurations for specific publications.
+**mpltex** is a python package for producing publication quality images using matplotlib.
 
 """
 
