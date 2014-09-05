@@ -1,32 +1,40 @@
 # -*- coding: utf-8 -*-
 """
-presentation.py
-===============
+web.py
+======
 
-Context decorator for producing figures suitable in presentation for
-Mac OS Keynote or Microsoft PowerPoint.
+Context decorator for producing figures suitable for web pages.
 
-PDF format for image file are used, because it correctly uses sans-serif fonts.
+PNG format for image file are used, because in web pages the pixel unit
+and speed are most important.
+
+NOTE:
+DPI or PPI is not important for PNG images. but it is critical in
+matplotlib. Matplotlib uses physical unit for its plot.
+Therefore, for same number of pixels, higher DPI will require smaller
+physical size in inch. But small physical size will cause plotting
+problems.
+It is obvious now we should choose a DPI that best matches the current working
+screen, so that matplotlib will draw things nicely.
 
 """
 import numpy as np
 
 from .general import MPLdecorator
-from .layout import point2inch, GOLDEN_RATIO
+from .layout import GOLDEN_RATIO, point2inch
 from .colors import brewer_set1
 
-__all__ = ['presentation_decorator', ]
+__all__ = ['web_decorator',]
 
-# Constants for presentation
-_width_full_pt = 1024  # Units in number of points (or dots)
-_width_normal_pt = int(_width_full_pt / 3.0)
-width_normal = point2inch(_width_normal_pt)
+# Constants for web
+_width_normal_px = 440
+save_dpi = 150
+width_normal = point2inch(_width_normal_px, save_dpi)
 width_tiny = 0.5 * width_normal
 width_small = 0.8 * width_normal
 width_large = 1.2 * width_normal
 width_large2 = 1.5 * width_normal
 width_huge = 1.8 * width_normal
-width_full = 0.9 * point2inch(_width_full_pt)  # use 90% of presentation page.
 
 # Default ratio for a single plot figure
 # Golden ratio
@@ -35,17 +43,19 @@ height_width_ratio = GOLDEN_RATIO  # = height / width
 _width = width_normal
 _height = _width * height_width_ratio
 
-_params = {'font.family' : 'sans-serif',
-           'font.serif' : ['Times', 'Computer Modern Roman'],
+_line_width = 0.8
+
+_params = {'font.family' : 'serif',
+           'font.serif' : ['Bitstream Vera Serif', 'Computer Modern Roman'],
            'font.sans-serif' : ['Helvetica', 'Arial', 'Lucida Grande'],
-           'font.size' : 12,
+           'font.size' : 7,
            'font.weight' : 'normal',
            'text.usetex' : True,
 
            'axes.color_cycle': brewer_set1,
            'axes.labelsize' : 'medium',
            'axes.labelweight' : 'normal',
-           'axes.linewidth' : 1.5,
+           'axes.linewidth' : _line_width,
 
            'figure.figsize' : (_width, _height),
            'figure.subplot.left' : 0.125,
@@ -53,8 +63,8 @@ _params = {'font.family' : 'sans-serif',
            'figure.subplot.bottom' : 0.1,
            'figure.subplot.top' : 0.95,
 
-           'savefig.dpi' : 300,
-           'savefig.format': 'pdf',
+           'savefig.dpi' : save_dpi,
+           'savefig.format': 'png',
            #'savefig.bbox': 'tight',
            # this will crop white spaces around images that will make
            # width/height no longer the same as the specified one.
@@ -68,36 +78,38 @@ _params = {'font.family' : 'sans-serif',
            'legend.markerscale' : 0.9,
            'legend.handletextpad' : 0.5,  # pad between handle and text
            'legend.borderaxespad' : 0.5,  # pad between legend and axes
-           'legend.borderpad' : 0.5,  # pad between legend and legend content
-           'legend.columnspacing' : 1,  # pad between each legend column
+           # pad between legend and legend content
+           'legend.borderpad' : 0.5,
+           # pad between each legend column
+           'legend.columnspacing' : 1,
 
            'text.fontsize' : 'medium',
 
-           'xtick.major.size' : 6,
+           'xtick.major.size' : 3,
            #'xtick.minor.size' : 2,
-           'xtick.major.width' : 1.5,
+           'xtick.major.width' : _line_width,
            #'xtick.minor.width' : 0.5,
-           #'xtick.major.pad' : 4,
+           'xtick.major.pad' : 2,
            #'xtick.minor.pad' : 4,
            #'xtick.color' : k,
            'xtick.labelsize' : 'medium',
            #'xtick.direction' : 'in',
 
-           'ytick.major.size' : 6,
+           'ytick.major.size' : 3,
            #'ytick.minor.size' : 2,
-           'ytick.major.width' : 1.5,
+           'ytick.major.width' : _line_width,
            #'ytick.minor.width' : 0.5,
-           #'ytick.major.pad' : 4,
+           'ytick.major.pad' : 2,
            #'ytick.minor.pad' : 4,
            #'ytick.color' : k,
            'ytick.labelsize' : 'medium',
            #'ytick.direction' : 'in',
 
-           'lines.linewidth' : 1.5,
-           'lines.markersize' : 6,
+           'lines.linewidth' : _line_width,
+           'lines.markersize' : 3,
            #'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
           }
 
-presentation_decorator = MPLdecorator(_params)
+web_decorator = MPLdecorator(_params)
 

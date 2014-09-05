@@ -13,6 +13,9 @@ __version__ = "0.1"
 
 from .general import *
 from .colors import *
+from .styles import *
+from .layout import *
 from .acs import *
 from .presentation import *
+from .web import *
 
