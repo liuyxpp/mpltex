@@ -9,7 +9,6 @@ Mac OS Keynote or Microsoft PowerPoint.
 PDF format for image file are used, because it correctly uses sans-serif fonts.
 
 """
-import numpy as np
 
 from .general import MPLdecorator
 from .layout import point2inch, GOLDEN_RATIO

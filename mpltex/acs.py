@@ -10,7 +10,6 @@ EPS format for image file are used, because it is high quality and working
 in actual physical size rahter than pixel unit.
 
 """
-import numpy as np
 
 from .general import MPLdecorator
 from .colors import brewer_set1

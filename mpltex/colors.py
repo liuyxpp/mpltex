@@ -8,7 +8,6 @@ A set of colors and color maps.
 """
 
 import brewer2mpl
-import numpy as np
 from matplotlib import cm
 
 # ColorBrewer by Drs. Cynthia Brewer and Mark Harrower of Pennsylvania
