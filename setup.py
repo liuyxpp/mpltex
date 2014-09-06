@@ -3,7 +3,7 @@ mpltex
 ======
 
 **mpltex** is a python package for producing publication quality images using matplotlib.
-Inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplot <https://github.com/olgabot/prettyplotlib>`_.
+Inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplotlib <https://github.com/olgabot/prettyplotlib>`_.
 
 The internal matplotlib color cycle is replaced by ColorBrewer Set1 scale which looks less saturated and more pleasing to eyes.
 For more information on ColorBrewer, see `a flash-based interactive map <http://colorbrewer2.org/>`_ and `a quick visual reference to all ColorBrewer scales <http://bl.ocks.org/mbostock/5577023>`_.
@@ -37,7 +37,7 @@ Just add one of **mpltex** decorators before your plot functions.
 
     import mpltex
 
-    @mpltex.acs_decorators
+    @mpltex.acs_decorator
     def your_plot():
         # plot images by matplotlib ...
 
@@ -51,14 +51,18 @@ Just add one of **mpltex** decorators before your plot functions.
 And it will produce images suitable for publishing in American Chemical Society (ACS).
 
 **mpltex** also includes several helper functions to faciliate production of specific type of images.
-Following code will produce a set of line arts with cycled line styles and line markers
+Following codes will produce a set of line arts with cycled line styles and line markers with the help of ``mpltex.nextlinestyle`` function.
 
 .. code:: python
 
+    import matplotlib.pyplot as plt
+    import mpltex
+
     @mpltex.acs_decorator
-    def your_plot(x, y):
+    def your_plot():
+        # generate data x and y
         fig, ax = plt.subplots(111)
-        for i in range(x.size):
+        for i in range(number_of_lines):
             # The default line style is iterating over
             # color, line, and marker with hollow types.
             linestyle = mpltex.nextlinestyle()
@@ -85,7 +89,7 @@ Links
 -----
 
 * `Yi-Xin Liu's personal website <http://ngpy.org>`_
-* `Development version <http://bitbucket.org/liuyxpp/mpltex/>`_
+* `Development version <https://github.com/liuyxpp/mpltex>`_
 """
 
 try:
@@ -95,7 +99,7 @@ except ImportError:
 
 setup(
     name='mpltex',
-    version='0.1',
+    version='0.1.2',
     license='BSD',
     description='mpltex is a python package for producing publication quality images using matplotlib.',
     author='Yi-Xin Liu',

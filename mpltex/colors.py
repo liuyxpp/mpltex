@@ -7,6 +7,8 @@ A set of colors and color maps.
 
 """
 
+import numpy as np
+
 import brewer2mpl
 from matplotlib import cm
 

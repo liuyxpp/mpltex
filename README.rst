@@ -2,7 +2,7 @@ mpltex
 ======
 
 **mpltex** is a python package for producing publication quality images using matplotlib.
-Inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplot <https://github.com/olgabot/prettyplotlib>`_.
+Inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplotlib <https://github.com/olgabot/prettyplotlib>`_.
 
 The internal matplotlib color cycle is replaced by ColorBrewer Set1 scale which looks less saturated and more pleasing to eyes.
 For more information on ColorBrewer, see `a flash-based interactive map <http://colorbrewer2.org/>`_ and `a quick visual reference to all ColorBrewer scales <http://bl.ocks.org/mbostock/5577023>`_.
@@ -88,5 +88,5 @@ Links
 -----
 
 * `Yi-Xin Liu's personal website <http://ngpy.org>`_
-* `Development version <http://bitbucket.org/liuyxpp/mpltex/>`_
+* `Development version <https://github.com/liuyxpp/mpltex>`_
 

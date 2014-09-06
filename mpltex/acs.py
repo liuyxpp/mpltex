@@ -13,6 +13,7 @@ in actual physical size rahter than pixel unit.
 
 from .general import MPLdecorator
 from .colors import brewer_set1
+from .layout import GOLDEN_RATIO
 
 __all__ = ['acs_decorator', ]
 
@@ -22,7 +23,7 @@ width_double_column = 7.00
 
 # Default ratio for a single plot figure
 # Golden ratio
-height_width_ratio = (np.sqrt(5) - 1) / 2  # = height / width
+height_width_ratio = GOLDEN_RATIO  # = height / width
 
 _width = width_single_column
 _height = width_single_column * height_width_ratio
