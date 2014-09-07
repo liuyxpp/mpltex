@@ -11,7 +11,7 @@ import itertools
 
 from .colors import almost_black, brewer_set1
 
-__all__ = ['lines', 'markers', 'nextlinestyle',]
+__all__ = ['lines', 'markers', 'nextlinestyle', 'linestyle_generator']
 
 
 _colors = itertools.cycle(brewer_set1)
@@ -32,6 +32,11 @@ marker_types = itertools.cycle(_marker_types)
 def nextlinestyle(no_line=False, is_line=True, is_marker=True, is_hollow=True):
      """
      Generate a dict for configuring plot line style.
+
+     NOTE: this function has a serious problem.
+     As long as mpltex is imported,
+     the beginning of the sequence cannot be configured later.
+     This function is obsolete, please use linestyle_generator instead.
 
      The default line style is markers linked by lines, both styles are cycled,
      and hollow markers are included.
@@ -79,3 +84,53 @@ def nextlinestyle(no_line=False, is_line=True, is_marker=True, is_hollow=True):
           linestyles['mec'] = mec
           linestyles['mfc'] = mfc
      return linestyles
+
+
+def linestyle_generator(colors=brewer_set1, lines=_line_styles,
+                        markers=_markers, hollow_styles=_marker_types):
+     """
+     Generate a dict for configuring plot line styles.
+
+     The default line style is markers linked by lines, both styles are cycled,
+     and hollow markers are included.
+
+     Usage:
+          linestyles = linestyle_generator()
+          linestyle = linestyles.next()
+
+     To exclude hollow markers, just let hollow_styles = [None].
+     Note that all inputs should be iterable objects.
+
+     :param colors: list of colors (tuple of RGB or #FFFFFF
+                    or color name string)
+     :type colors: list of tuple or list of string
+     :param lines: list of line styles ('-', '--', '-.', ':')
+     :type is_line: list of string
+     :param markers: list of markers (see matplot for available markers)
+     :type marker: list of charaters
+     :param hollow_styles: True for hollow markers, False for filled markers.
+     :param is_hollow: list of bool
+     :return: dict of parameters of linestyle
+     :rtype: dict
+     """
+     color_cycle = itertools.cycle(colors)
+     line_cycle = itertools.cycle(lines)
+     full_markers = itertools.product(markers, hollow_styles)
+     marker_cycle = itertools.cycle(full_markers)
+     while True:
+        color = color_cycle.next()
+        linestyle = line_cycle.next()
+        marker, hollow = marker_cycle.next()
+        if hollow is None:  # don't cycle hollow markers
+            mew = 0
+            mec = 'None'
+            mfc = color
+        elif hollow:  # make hollow markers
+            mew = 1
+            mec = color
+            mfc = 'None'
+        else:  # make filled markers
+            mew = 1
+            mec = color
+            mfc = color
+        yield {'linestyle':linestyle, 'marker':marker, 'mew':mew, 'mec':mec, 'mfc':mfc}
