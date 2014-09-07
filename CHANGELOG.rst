@@ -3,6 +3,11 @@ mpltex Changelog
 
 Here you can see the full list of changes between each mpltex release.
 
+Version 0.2
+-----------
+
+* Replace nextlinestyle with linestyle_generator.
+
 Version 0.1.2
 -------------
 
