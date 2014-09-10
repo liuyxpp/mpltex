@@ -49,8 +49,8 @@ def test_plot_scatter():
         y = np.random.normal(size=10).cumsum()
         x = np.arange(10)
         ax.plot(x, y, label=str(i), **linestyle.next())
-        ax.locator_params(nbins=5)
 
+    ax.locator_params(nbins=5)
     ax.set_xlabel('Number of steps')
     ax.set_ylabel('Distance')
     ax.legend(loc='best', ncol=4)

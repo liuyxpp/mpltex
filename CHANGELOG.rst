@@ -3,6 +3,16 @@ mpltex Changelog
 
 Here you can see the full list of changes between each ``pltex`` release.
 
+Version 0.2.3
+-------------
+
+* Fix an serious error in the sample code in README.
+
+Version 0.2.2
+-------------
+
+* The same as v0.2.1.
+
 Version 0.2.1
 -------------
 

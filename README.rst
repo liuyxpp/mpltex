@@ -30,7 +30,9 @@ Quickstart
 2. Usage
 ^^^^^^^^
 
-Just add one of ``mpltex`` decorators before your plot functions.
+Examples and sample plots can be found `here <http://ngpy.org/post/mpltex/>`_.
+
+Following is a breif introduction. Just add one of ``mpltex`` decorators before your plot functions.
 
 .. code:: python
 
@@ -47,7 +49,7 @@ Just add one of ``mpltex`` decorators before your plot functions.
     # Then use your_plot in a normal way.
     your_plot()
 
-And it will produce images suitable for publishing in American Chemical Society (ACS).
+And it will create a plot ready for publishing in journals published by American Chemical Society (ACS).
 
 ``mpltex`` also contains several helper functions to faciliate production of specific type of images.
 Following codes will produce a set of line arts with cycled line styles and line markers with the help of ``mpltex.linestyle_generator`` function.
@@ -59,12 +61,14 @@ Following codes will produce a set of line arts with cycled line styles and line
 
     @mpltex.acs_decorator
     def your_plot():
-        # generate data x and y
+        # ...   # generate data x and y
         fig, ax = plt.subplots(111)
+
+        # The default line style is iterating over
+        # color, line, and marker with hollow types.
+        linestyles = mpltex.linestyle_generator()
+
         for i in range(number_of_lines):
-            # The default line style is iterating over
-            # color, line, and marker with hollow types.
-            linestyles = mpltex.linestyle_generator()
             ax.plot(x[i], y[i], label=str(i), **linestyles.next())
 
         ax.locator_params(nbins=5)  # limit the number of major ticks
@@ -77,8 +81,6 @@ Following codes will produce a set of line arts with cycled line styles and line
 * ``mpltex.acs_decorator``: output EPS images for publishing in ACS.
 * ``mpltex.presentation_decorator``: output PDF images for presentation slides (Keynote).
 * ``mpltex.web_decorator``: output PNG images for web pages.
-
-Examples and sample plots can be found `here <http://ngpy.org/post/mpltex/>`_.
 
 Contribute
 ----------
