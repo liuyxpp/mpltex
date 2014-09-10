@@ -9,7 +9,8 @@ mpltex
 
 __author__ = "Yi-Xin Liu <liuyxpp@gmail.com>"
 __license__ = "BSD License"
-__version__ = "0.2"
+
+from ._version import __version__
 
 from .general import *
 from .colors import *

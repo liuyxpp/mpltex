@@ -28,8 +28,8 @@ width_huge = 1.8 * width_normal
 width_full = 0.9 * point2inch(_width_full_pt)  # use 90% of presentation page.
 
 # Default ratio for a single plot figure
-# Golden ratio
-height_width_ratio = GOLDEN_RATIO  # = height / width
+# I prefer a little higher than goden ratio, from 0.618 to 0.68
+height_width_ratio = GOLDEN_RATIO * 1.1  # = height / width
 
 _width = width_normal
 _height = _width * height_width_ratio

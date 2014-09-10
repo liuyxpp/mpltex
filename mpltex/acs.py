@@ -22,8 +22,8 @@ width_single_column = 3.25
 width_double_column = 7.00
 
 # Default ratio for a single plot figure
-# Golden ratio
-height_width_ratio = GOLDEN_RATIO  # = height / width
+# I prefer a little higher than goden ratio, from 0.618 to about 0.68
+height_width_ratio = GOLDEN_RATIO * 1.1  # = height / width
 
 _width = width_single_column
 _height = width_single_column * height_width_ratio
