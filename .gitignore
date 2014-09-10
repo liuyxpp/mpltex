@@ -8,4 +8,5 @@ mpltex.egg-info/*
 *.sublime-project
 *.sublime-workspace
 *.DS_Store
+*.ipynb_checkpoints
 

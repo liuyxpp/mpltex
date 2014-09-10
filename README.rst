@@ -1,13 +1,13 @@
 mpltex
 ======
 
-**mpltex** is a python package for producing publication quality images using matplotlib.
+``mpltex`` is a python package for producing publication quality images using ``matplotlib``.
 Inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplotlib <https://github.com/olgabot/prettyplotlib>`_.
 
-The internal matplotlib color cycle is replaced by ColorBrewer Set1 scale which looks less saturated and more pleasing to eyes.
+The internal ``matplotlib`` color cycle is replaced by ColorBrewer Set1 scale which looks less saturated and more pleasing to eyes.
 For more information on ColorBrewer, see `a flash-based interactive map <http://colorbrewer2.org/>`_ and `a quick visual reference to all ColorBrewer scales <http://bl.ocks.org/mbostock/5577023>`_.
 
-**mpltex** also enable cycle line styles and a selected set of line markers.
+``mpltex`` also enable cycle line styles and a selected set of line markers.
 Hollow markers are supported.
 
 Quickstart
@@ -30,7 +30,7 @@ Quickstart
 2. Usage
 ^^^^^^^^
 
-Just add one of **mpltex** decorators before your plot functions.
+Just add one of ``mpltex`` decorators before your plot functions.
 
 .. code:: python
 
@@ -49,7 +49,7 @@ Just add one of **mpltex** decorators before your plot functions.
 
 And it will produce images suitable for publishing in American Chemical Society (ACS).
 
-**mpltex** also includes several helper functions to faciliate production of specific type of images.
+``mpltex`` also contains several helper functions to faciliate production of specific type of images.
 Following codes will produce a set of line arts with cycled line styles and line markers with the help of ``mpltex.linestyle_generator`` function.
 
 .. code:: python
@@ -78,15 +78,16 @@ Following codes will produce a set of line arts with cycled line styles and line
 * ``mpltex.presentation_decorator``: output PDF images for presentation slides (Keynote).
 * ``mpltex.web_decorator``: output PNG images for web pages.
 
+Examples and sample plots can be found `here <http://ngpy.org/post/mpltex/>`_.
+
 Contribute
 ----------
 
-Please do not hesitate to submit your own configurations.
-I will add them to the package.
+Let me know what you think and wish. I can be reached through `email <mailto:liuyxpp@gmail.com>`_ or `other ways <http://ngpy.org/about>`_. Or fork the project at `github.com <https://github.com/liuyxpp/mpltex>`_ and file a pull request.
 
 Links
 -----
 
 * `Yi-Xin Liu's personal website <http://ngpy.org>`_
-* `Development version <https://github.com/liuyxpp/mpltex>`_
+* `Development version at github.com <https://github.com/liuyxpp/mpltex>`_
 
