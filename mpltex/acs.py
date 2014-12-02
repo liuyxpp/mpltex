@@ -34,7 +34,7 @@ _params = {'font.family' : 'serif',
            'text.usetex' : True,
 
            'axes.color_cycle': brewer_set1,
-           'axes.labelsize' : 9,
+           'axes.labelsize' : 8,
            'axes.linewidth' : 1,
 
            'figure.figsize' : (_width, _height),
