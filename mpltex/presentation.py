@@ -40,6 +40,13 @@ _params = {'font.family' : 'sans-serif',
            'font.size' : 12,
            'font.weight' : 'normal',
            'text.usetex' : True,
+           # To force LaTeX use Helvetica fonts.
+           'text.latex.preamble': [
+                                    r'\usepackage{siunitx}',
+                                    r'\sisetup{detect-all}',
+                                    r'\usepackage{helvet}',
+                                    r'\usepackage[eulergreek,EULERGREEK]{sansmath}',
+                                    r'\sansmath'],
 
            'axes.color_cycle': brewer_set1,
            'axes.labelsize' : 'medium',

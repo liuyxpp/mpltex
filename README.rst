@@ -79,6 +79,7 @@ Following codes will produce a set of line arts with cycled line styles and line
 **Available Decorators**
 
 * ``mpltex.acs_decorator``: output EPS images for publishing in ACS.
+* ``mpltex.rsc_decorator``: output EPS images for publishing in RSC.
 * ``mpltex.presentation_decorator``: output PDF images for presentation slides (Keynote).
 * ``mpltex.web_decorator``: output PNG images for web pages.
 

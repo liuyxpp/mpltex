@@ -3,6 +3,12 @@ mpltex Changelog
 
 Here you can see the full list of changes between each ``pltex`` release.
 
+Version 0.3
+-----------
+
+* Add rsc_decorator.
+* Use Helvetica font for all plots.
+
 Version 0.2.3
 -------------
 

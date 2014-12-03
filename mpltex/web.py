@@ -44,12 +44,19 @@ _height = _width * height_width_ratio
 
 _line_width = 0.8
 
-_params = {'font.family' : 'serif',
+_params = {'font.family' : 'sans-serif',
            'font.serif' : ['Bitstream Vera Serif', 'Computer Modern Roman'],
            'font.sans-serif' : ['Helvetica', 'Arial', 'Lucida Grande'],
            'font.size' : 7,
            'font.weight' : 'normal',
            'text.usetex' : True,
+           # To force LaTeX use Helvetica fonts.
+           'text.latex.preamble': [
+                                    r'\usepackage{siunitx}',
+                                    r'\sisetup{detect-all}',
+                                    r'\usepackage{helvet}',
+                                    r'\usepackage[eulergreek,EULERGREEK]{sansmath}',
+                                    r'\sansmath'],
 
            'axes.color_cycle': brewer_set1,
            'axes.labelsize' : 'medium',

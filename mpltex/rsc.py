@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-acs.py
+rsc.py
 ======
 
 Context decorator for producing figures which is ready to publish
-in American Chemical Society.
+in Royal Society of Chemistry.
 
-EPS format for image file are used, because it is high quality and working
+Reference:
+    RSC Authour Guidelines
+
+EPS format for image file are used, because of its high quality and working
 in actual physical size rahter than pixel unit.
 
 """
@@ -15,11 +18,11 @@ from .general import MPLdecorator
 from .colors import brewer_set1
 from .layout import GOLDEN_RATIO
 
-__all__ = ['acs_decorator', ]
+__all__ = ['rsc_decorator', ]
 
-# Constants from ACS Authour Guidelines.
-width_single_column = 3.25
-width_double_column = 7.00
+# Constants from RSC Authour Guidelines.
+width_single_column = 3.26  # 8.3 cm
+width_double_column = 6.73  # 17.1 cm
 
 # Default ratio for a single plot figure
 # I prefer a little higher than goden ratio, from 0.618 to about 0.68
@@ -30,7 +33,8 @@ _height = width_single_column * height_width_ratio
 
 _params = {'font.family' : 'sans-serif',
            'font.serif' : ['Times', 'Computer Modern Roman'],
-           'font.sans-serif' : ['Helvetica', 'Computer Modern Sans serif'],
+           'font.sans-serif' : ['Helvetica', 'Arial',
+                                'Computer Modern Sans serif'],
            'text.usetex' : True,
            # To force LaTeX use Helvetica fonts.
            'text.latex.preamble': [
@@ -41,7 +45,7 @@ _params = {'font.family' : 'sans-serif',
                                     r'\sansmath'],
 
            'axes.color_cycle': brewer_set1,
-           'axes.labelsize' : 8,
+           'axes.labelsize' : 7,
            'axes.linewidth' : 1,
 
            'figure.figsize' : (_width, _height),
@@ -56,7 +60,7 @@ _params = {'font.family' : 'sans-serif',
            # this will crop white spaces around images that will make
            # width/height no longer the same as the specified one.
 
-           'legend.fontsize' : 7.5,
+           'legend.fontsize' : 7,
            'legend.frameon' : False,
            'legend.numpoints' : 1,
            'legend.handlelength' : 2,
@@ -68,9 +72,9 @@ _params = {'font.family' : 'sans-serif',
            'legend.borderpad' : 0.5,  # pad between legend and legend content
            'legend.columnspacing' : 1,  # pad between each legend column
 
-           'text.fontsize' : 8,
-           'xtick.labelsize' : 8,
-           'ytick.labelsize' : 8,
+           'text.fontsize' : 7,
+           'xtick.labelsize' : 7,
+           'ytick.labelsize' : 7,
 
            'lines.linewidth' : 1,
            'lines.markersize' : 4,
@@ -78,5 +82,5 @@ _params = {'font.family' : 'sans-serif',
            # 0 will make line-type markers, such as '+', 'x', invisible
           }
 
-acs_decorator = MPLdecorator(_params)
+rsc_decorator = MPLdecorator(_params)
 
