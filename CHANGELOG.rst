@@ -1,7 +1,12 @@
 mpltex Changelog
 ================
 
-Here you can see the full list of changes between each ``pltex`` release.
+Here you can see the full list of changes between each ``mpltex`` release.
+
+Version 0.3.1
+-------------
+
+* Replace text.fontsize by font.size in rcParams to be compatible with ``matplotlib`` 1.4.2+.
 
 Version 0.3
 -----------

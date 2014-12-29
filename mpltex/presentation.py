@@ -77,7 +77,7 @@ _params = {'font.family' : 'sans-serif',
            'legend.borderpad' : 0.5,  # pad between legend and legend content
            'legend.columnspacing' : 1,  # pad between each legend column
 
-           'text.fontsize' : 'medium',
+           #'text.fontsize' : 'medium',
 
            'xtick.major.size' : 6,
            #'xtick.minor.size' : 2,

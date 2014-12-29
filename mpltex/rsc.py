@@ -35,6 +35,7 @@ _params = {'font.family' : 'sans-serif',
            'font.serif' : ['Times', 'Computer Modern Roman'],
            'font.sans-serif' : ['Helvetica', 'Arial',
                                 'Computer Modern Sans serif'],
+           'font.size': 7,
            'text.usetex' : True,
            # To force LaTeX use Helvetica fonts.
            'text.latex.preamble': [
@@ -72,7 +73,7 @@ _params = {'font.family' : 'sans-serif',
            'legend.borderpad' : 0.5,  # pad between legend and legend content
            'legend.columnspacing' : 1,  # pad between each legend column
 
-           'text.fontsize' : 7,
+           #'text.fontsize' : 7,  # use font.size for Matplotlib 1.4.2+
            'xtick.labelsize' : 7,
            'ytick.labelsize' : 7,
 

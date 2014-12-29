@@ -45,6 +45,6 @@ setup(
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
         'Topic :: Education',
-    ]
+    ],
      )
 

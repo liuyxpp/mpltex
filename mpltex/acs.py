@@ -31,6 +31,7 @@ _height = width_single_column * height_width_ratio
 _params = {'font.family' : 'sans-serif',
            'font.serif' : ['Times', 'Computer Modern Roman'],
            'font.sans-serif' : ['Helvetica', 'Computer Modern Sans serif'],
+           'font.size': 8,
            'text.usetex' : True,
            # To force LaTeX use Helvetica fonts.
            'text.latex.preamble': [
@@ -68,7 +69,7 @@ _params = {'font.family' : 'sans-serif',
            'legend.borderpad' : 0.5,  # pad between legend and legend content
            'legend.columnspacing' : 1,  # pad between each legend column
 
-           'text.fontsize' : 8,
+           #'text.fontsize' : 8,
            'xtick.labelsize' : 8,
            'ytick.labelsize' : 8,
 
