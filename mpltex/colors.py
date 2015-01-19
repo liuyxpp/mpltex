@@ -22,6 +22,8 @@ from matplotlib import cm
 # ColorBrewer scale 'Qualitative.Set1'.
 # This one has nice "traditional" colors like reds and blues
 brewer_set1 = brewer2mpl.get_map('Set1', 'qualitative', 9).mpl_colors
+# Remove the sixth color (yellow) which is too bright
+brewer_set1.pop(5)
 
 # ColorBrewer scale 'Qualitative.Set2'.
 # This one are lesssaturated than those colors in Set1.
