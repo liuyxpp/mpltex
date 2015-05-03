@@ -26,17 +26,34 @@ brewer_set1 = brewer2mpl.get_map('Set1', 'qualitative', 9).mpl_colors
 brewer_set1.pop(5)
 
 # ColorBrewer scale 'Qualitative.Set2'.
-# This one are lesssaturated than those colors in Set1.
+# This one are less saturated than those colors in Set1.
 brewer_set2 = brewer2mpl.get_map('Set2', 'qualitative', 8).mpl_colors
+
+# ColorBrewer scale 'Qualitative.Set3'.
+# This one are even less saturated than those colors in Set1.
+brewer_set3 = brewer2mpl.get_map('Set3', 'qualitative', 12).mpl_colors
+# Remove the second color (yellow) which is too bright
+brewer_set3.pop(1)
 
 # ColorBrewer scale 'Qualitative.Accent'.
 brewer_accent = brewer2mpl.get_map('Accent', 'qualitative', 8).mpl_colors
+# Remove the fourth color (yellow) which is too bright
+brewer_accent.pop(3)
 
 # ColorBrewer scale 'Qualitative.Dark2'.
 brewer_dark2 = brewer2mpl.get_map('Dark2', 'qualitative', 8).mpl_colors
 
 # ColorBrewer scale 'Qualitative.Paired'.
 brewer_paired = brewer2mpl.get_map('Paired', 'qualitative', 12).mpl_colors
+# Remove the 11th and 12th colors (yellow and brown) which is too bright
+brewer_paired.pop(11)
+brewer_paired.pop(10)
+
+# ColorBrewer scale 'Qualitative.Pastel1'.
+brewer_pastel1 = brewer2mpl.get_map('Pastel1', 'qualitative', 9).mpl_colors
+
+# ColorBrewer scale 'Qualitative.Pastel2'.
+brewer_pastel2 = brewer2mpl.get_map('Pastel2', 'qualitative', 8).mpl_colors
 
 # Set some commonly used colors
 almost_black = '#262626'
