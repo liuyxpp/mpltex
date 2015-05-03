@@ -13,11 +13,11 @@ from .colors import almost_black, brewer_set1
 
 __all__ = ['lines', 'markers', 'nextlinestyle', 'linestyle_generator']
 
+_colors = brewer_set1
+colors = itertools.cycle(_colors)
 
-_colors = itertools.cycle(brewer_set1)
-
-_line_styles = ['-', '--', '-.', ':']
-lines = itertools.cycle(_line_styles)
+_lines = ['-', '--', '-.', ':']
+lines = itertools.cycle(_lines)
 
 _markers = ['o', 's', 'v', '^', 'D', 'p', 'h', '<', '>']
 markers = itertools.cycle(_markers)
@@ -30,7 +30,7 @@ _marker_types = [False, True]  # True for hollow markers
 marker_types = itertools.cycle(_marker_types)
 
 
-def linestyle_generator(colors=brewer_set1, lines=_line_styles,
+def linestyle_generator(colors=_colors, lines=_lines,
                         markers=_markers, hollow_styles=_marker_types):
     """
     Generate a dict for configuring plot line styles.
@@ -132,7 +132,7 @@ def nextlinestyle(no_line=False, is_line=True, is_marker=True, is_hollow=True):
     :return: dict of parameters of linestyle
     :rtype: dict
     """
-    color = _colors.next()
+    color = colors.next()
     linestyle = lines.next()
     if(is_hollow):
         marker = markersh.next()
