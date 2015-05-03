@@ -32,7 +32,7 @@ Quickstart
 
 Examples and sample plots can be found `here <http://ngpy.org/post/mpltex/>`_.
 
-Following is a breif introduction. Just add one of ``mpltex`` decorators before your plot functions.
+Following is a brief introduction. Just add one of ``mpltex`` decorators before your plot functions.
 
 .. code:: python
 
@@ -51,7 +51,7 @@ Following is a breif introduction. Just add one of ``mpltex`` decorators before 
 
 And it will create a plot ready for publishing in journals published by American Chemical Society (ACS).
 
-``mpltex`` also contains several helper functions to faciliate production of specific type of images.
+``mpltex`` also contains several helper functions to facilitate production of specific type of images.
 Following codes will produce a set of line arts with cycled line styles and line markers with the help of ``mpltex.linestyle_generator`` function.
 
 .. code:: python
