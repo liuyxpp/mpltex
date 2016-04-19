@@ -102,8 +102,8 @@ def linestyle_generator(colors=_colors, lines=_lines,
                 mew = 1
                 mec = color
                 mfc = color
-            yield {'color': color, 'linestyle':linestyle,
-                   'marker':marker, 'mew':mew, 'mec':mec, 'mfc':mfc}
+            yield {'color': color, 'linestyle': linestyle,
+                   'marker': marker, 'mew': mew, 'mec': mec, 'mfc': mfc}
         else:
             yield {}
 

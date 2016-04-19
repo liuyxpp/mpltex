@@ -30,7 +30,6 @@ setup(
     include_package_data=True,
     zip_safe=False,
     long_description=open(os.path.join(cwd, 'README.rst')).read(),
-    platform='linux',
     install_requires=[
         'matplotlib',
         'brewer2mpl',

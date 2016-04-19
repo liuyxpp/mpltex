@@ -24,6 +24,8 @@ from matplotlib import cm
 brewer_set1 = brewer2mpl.get_map('Set1', 'qualitative', 9).mpl_colors
 # Remove the sixth color (yellow) which is too bright
 brewer_set1.pop(5)
+# Swap the red and blue to let blue come first
+brewer_set1[0], brewer_set1[1] = brewer_set1[1], brewer_set1[0]
 
 # ColorBrewer scale 'Qualitative.Set2'.
 # This one are less saturated than those colors in Set1.
@@ -72,4 +74,3 @@ blues_r.set_under('white')
 # and red=hot=large numbers with '_r' suffix
 brewer_blue_red = brewer2mpl.get_map('RdBu', 'Diverging', 11,
                                      reverse=True).mpl_colormap
-
