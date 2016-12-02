@@ -3,6 +3,16 @@ mpltex Changelog
 
 Here you can see the full list of changes between each ``mpltex`` release.
 
+Version 0.4.1
+-------------
+
+* Using prop_cycle instead of color_cycle as required by `matplotlib`.
+
+Version 0.4
+-----------
+
+* Tweak default color cycle.
+
 Version 0.3.1
 -------------
 

@@ -9,4 +9,6 @@ mpltex.egg-info/*
 *.sublime-workspace
 *.DS_Store
 *.ipynb_checkpoints
-
+tests/*.png
+tests/*.pdf
+tests/*.eps

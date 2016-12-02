@@ -43,7 +43,5 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Scientific/Engineering',
-        'Topic :: Education',
-    ],
-     )
-
+        'Topic :: Education', ],
+)

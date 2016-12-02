@@ -19,7 +19,7 @@ colors = itertools.cycle(_colors)
 _lines = ['-', '--', '-.', ':']
 lines = itertools.cycle(_lines)
 
-_markers = ['o', 's', 'v', '^', 'D', 'p', 'h', '<', '>']
+_markers = ['o', 's', 'v', '^', 'D', '<', '>', 'p', 'h']
 markers = itertools.cycle(_markers)
 
 # for making hollow markers, use it together with marker_types

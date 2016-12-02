@@ -10,6 +10,7 @@ A set of colors and color maps.
 import numpy as np
 
 import brewer2mpl
+from cycler import cycler
 from matplotlib import cm
 
 # ColorBrewer by Drs. Cynthia Brewer and Mark Harrower of Pennsylvania
@@ -74,3 +75,5 @@ blues_r.set_under('white')
 # and red=hot=large numbers with '_r' suffix
 brewer_blue_red = brewer2mpl.get_map('RdBu', 'Diverging', 11,
                                      reverse=True).mpl_colormap
+
+default_color_cycler = cycler('color', brewer_set1)

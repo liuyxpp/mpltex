@@ -9,7 +9,7 @@ import mpltex
 import numpy as np
 
 
-@mpltex.acs_decorator
+@mpltex.presentation_decorator
 def test_plot():
     # Set the random seed for consistency
     np.random.seed(12)
@@ -41,8 +41,8 @@ def test_plot_scatter():
     # The default line style is iterating over color, line, and marker with
     # hollow types.
     linestyle = mpltex.linestyle_generator(colors=[],
-                                           lines=['-',':'],
-                                           markers=['o','s'],
+                                           lines=['-', ':'],
+                                           markers=['o', 's'],
                                            hollow_styles=[False, False, True, True],
                                            )
     for i in range(8):
@@ -60,7 +60,5 @@ def test_plot_scatter():
 
 
 if __name__ == '__main__':
-    #test_plot()
-    test_plot_scatter()
-
-
+    test_plot()
+    # test_plot_scatter()

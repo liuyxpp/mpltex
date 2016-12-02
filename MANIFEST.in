@@ -3,6 +3,5 @@ include LICENSE.txt
 include CHANGELOG.txt
 recursive-include docs *
 recursive-exclude docs *.tar.gz
-recursive-exclude chebpy *.pyc
-recursive-exclude chebpy *.pyo
-
+recursive-exclude mpltex *.pyc
+recursive-exclude mpltex *.pyo

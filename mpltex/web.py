@@ -21,9 +21,9 @@ screen, so that matplotlib will draw things nicely.
 
 from .general import MPLdecorator
 from .layout import GOLDEN_RATIO, point2inch
-from .colors import brewer_set1
+from .colors import default_color_cycler
 
-__all__ = ['web_decorator',]
+__all__ = ['web_decorator', ]
 
 # Constants for web
 _width_normal_px = 440
@@ -44,78 +44,75 @@ _height = _width * height_width_ratio
 
 _line_width = 0.8
 
-_params = {'font.family' : 'sans-serif',
-           'font.serif' : ['Bitstream Vera Serif', 'Computer Modern Roman'],
-           'font.sans-serif' : ['Helvetica', 'Arial', 'Lucida Grande'],
-           'font.size' : 7,
-           'font.weight' : 'normal',
-           'text.usetex' : True,
+_params = {'font.family': 'sans-serif',
+           'font.serif': ['Bitstream Vera Serif', 'Computer Modern Roman'],
+           'font.sans-serif': ['Helvetica', 'Arial', 'Lucida Grande'],
+           'font.size': 7,
+           'font.weight': 'normal',
+           'text.usetex': True,
            # To force LaTeX use Helvetica fonts.
-           'text.latex.preamble': [
-                                    r'\usepackage{siunitx}',
-                                    r'\sisetup{detect-all}',
-                                    r'\usepackage{helvet}',
-                                    r'\usepackage[eulergreek,EULERGREEK]{sansmath}',
-                                    r'\sansmath'],
+           'text.latex.preamble': [r'\usepackage{siunitx}',
+                                   r'\sisetup{detect-all}',
+                                   r'\usepackage{helvet}',
+                                   r'\usepackage[eulergreek,EULERGREEK]{sansmath}',
+                                   r'\sansmath'],
+           'axes.prop_cycle': default_color_cycler,
+           'axes.labelsize': 'medium',
+           'axes.labelweight': 'normal',
+           'axes.linewidth': _line_width,
 
-           'axes.color_cycle': brewer_set1,
-           'axes.labelsize' : 'medium',
-           'axes.labelweight' : 'normal',
-           'axes.linewidth' : _line_width,
+           'figure.figsize': (_width, _height),
+           'figure.subplot.left': 0.125,
+           'figure.subplot.right': 0.95,
+           'figure.subplot.bottom': 0.1,
+           'figure.subplot.top': 0.95,
 
-           'figure.figsize' : (_width, _height),
-           'figure.subplot.left' : 0.125,
-           'figure.subplot.right' : 0.95,
-           'figure.subplot.bottom' : 0.1,
-           'figure.subplot.top' : 0.95,
-
-           'savefig.dpi' : save_dpi,
+           'savefig.dpi': save_dpi,
            'savefig.format': 'png',
-           #'savefig.bbox': 'tight',
+           # 'savefig.bbox': 'tight',
            # this will crop white spaces around images that will make
            # width/height no longer the same as the specified one.
 
-           'legend.fontsize' : 'small',
-           'legend.frameon' : False,
-           'legend.numpoints' : 1,
-           'legend.handlelength' : 2,
-           'legend.scatterpoints' : 1,
-           'legend.labelspacing' : 0.5,
-           'legend.markerscale' : 0.9,
-           'legend.handletextpad' : 0.5,  # pad between handle and text
-           'legend.borderaxespad' : 0.5,  # pad between legend and axes
+           'legend.fontsize': 'small',
+           'legend.frameon': False,
+           'legend.numpoints': 1,
+           'legend.handlelength': 2,
+           'legend.scatterpoints': 1,
+           'legend.labelspacing': 0.5,
+           'legend.markerscale': 0.9,
+           'legend.handletextpad': 0.5,  # pad between handle and text
+           'legend.borderaxespad': 0.5,  # pad between legend and axes
            # pad between legend and legend content
-           'legend.borderpad' : 0.5,
+           'legend.borderpad': 0.5,
            # pad between each legend column
-           'legend.columnspacing' : 1,
+           'legend.columnspacing': 1,
 
-           #'text.fontsize' : 'medium',
+           # 'text.fontsize' : 'medium',
 
-           'xtick.major.size' : 3,
-           #'xtick.minor.size' : 2,
-           'xtick.major.width' : _line_width,
-           #'xtick.minor.width' : 0.5,
-           'xtick.major.pad' : 2,
-           #'xtick.minor.pad' : 4,
-           #'xtick.color' : k,
-           'xtick.labelsize' : 'medium',
-           #'xtick.direction' : 'in',
+           'xtick.major.size': 3,
+           # 'xtick.minor.size': 2,
+           'xtick.major.width': _line_width,
+           # 'xtick.minor.width': 0.5,
+           'xtick.major.pad': 2,
+           # 'xtick.minor.pad': 4,
+           # 'xtick.color' : k,
+           'xtick.labelsize': 'medium',
+           # 'xtick.direction': 'in',
 
-           'ytick.major.size' : 3,
-           #'ytick.minor.size' : 2,
-           'ytick.major.width' : _line_width,
-           #'ytick.minor.width' : 0.5,
-           'ytick.major.pad' : 2,
-           #'ytick.minor.pad' : 4,
-           #'ytick.color' : k,
-           'ytick.labelsize' : 'medium',
-           #'ytick.direction' : 'in',
+           'ytick.major.size': 3,
+           # 'ytick.minor.size': 2,
+           'ytick.major.width': _line_width,
+           # 'ytick.minor.width': 0.5,
+           'ytick.major.pad': 2,
+           # 'ytick.minor.pad': 4,
+           # 'ytick.color': k,
+           'ytick.labelsize': 'medium',
+           # 'ytick.direction' : 'in',
 
-           'lines.linewidth' : _line_width,
-           'lines.markersize' : 3,
-           #'lines.markeredgewidth' : 0,
+           'lines.linewidth': _line_width,
+           'lines.markersize': 3,
+           # 'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
-          }
+           }
 
 web_decorator = MPLdecorator(_params)
-

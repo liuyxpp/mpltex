@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-acs.py
+aps.py
 ======
 
 Context decorator for producing figures which is ready to publish
@@ -15,11 +15,11 @@ from .general import MPLdecorator
 from .colors import default_color_cycler
 from .layout import GOLDEN_RATIO
 
-__all__ = ['acs_decorator', ]
+__all__ = ['aps_decorator', ]
 
 # Constants from ACS Authour Guidelines.
-width_single_column = 3.25
-width_double_column = 7.00
+width_single_column = 3.375
+width_double_column = 6.75
 
 # Default ratio for a single plot figure
 # I prefer a little higher than goden ratio, from 0.618 to about 0.68
@@ -44,12 +44,12 @@ _params = {'font.family': 'sans-serif',
            'axes.linewidth': 1,
 
            'figure.figsize': (_width, _height),
-           'figure.subplot.left': 0.125,
-           'figure.subplot.right': 0.95,
-           'figure.subplot.bottom': 0.1,
-           'figure.subplot.top': 0.95,
+           # 'figure.subplot.left' : 0.125,
+           # 'figure.subplot.right' : 0.95,
+           # 'figure.subplot.bottom' : 0.1,
+           # 'figure.subplot.top' : 0.95,
 
-           'savefig.dpi': 300,
+           'savefig.dpi': 600,
            'savefig.format': 'eps',
            # 'savefig.bbox': 'tight',
            # this will crop white spaces around images that will make
@@ -72,9 +72,9 @@ _params = {'font.family': 'sans-serif',
            'ytick.labelsize': 8,
 
            'lines.linewidth': 1,
-           'lines.markersize': 4,
-           # 'lines.markeredgewidth': 0,
+           'lines.markersize': 3,
+           # 'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
            }
 
-acs_decorator = MPLdecorator(_params)
+aps_decorator = MPLdecorator(_params)

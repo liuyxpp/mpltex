@@ -12,7 +12,7 @@ PDF format for image file are used, because it correctly uses sans-serif fonts.
 
 from .general import MPLdecorator
 from .layout import point2inch, GOLDEN_RATIO
-from .colors import brewer_set1
+from .colors import default_color_cycler
 
 __all__ = ['presentation_decorator', ]
 
@@ -46,8 +46,7 @@ _params = {'font.family': 'sans-serif',
                                    r'\usepackage{helvet}',
                                    r'\usepackage[eulergreek,EULERGREEK]{sansmath}',
                                    r'\sansmath'],
-
-           'axes.color_cycle': brewer_set1,
+           'axes.prop_cycle': default_color_cycler,
            'axes.labelsize': 'medium',
            'axes.labelweight': 'normal',
            'axes.linewidth': 1.5,
