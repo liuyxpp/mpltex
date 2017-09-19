@@ -7,6 +7,7 @@ Version 0.4.1
 -------------
 
 * Using prop_cycle instead of color_cycle as required by `matplotlib`.
+* Add aps_decorator for APS plots.
 
 Version 0.4
 -----------
