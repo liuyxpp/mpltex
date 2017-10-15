@@ -32,7 +32,7 @@ setup(
     long_description=open(os.path.join(cwd, 'README.rst')).read(),
     install_requires=[
         'matplotlib',
-        'brewer2mpl',
+        'palettable',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',

@@ -7,7 +7,7 @@ Inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `pret
 The internal ``matplotlib`` color cycle is replaced by ColorBrewer Set1 scale which looks less saturated and more pleasing to eyes.
 For more information on ColorBrewer, see `a flash-based interactive map <http://colorbrewer2.org/>`_ and `a quick visual reference to all ColorBrewer scales <http://bl.ocks.org/mbostock/5577023>`_.
 
-``mpltex`` also enable cycle line styles and a selected set of line markers.
+``mpltex`` also provide a way to generate highly configurable line styles with colors, line types, and line markers.
 Hollow markers are supported.
 
 Quickstart
@@ -24,13 +24,13 @@ Quickstart
 
 -  `matplotlib <http://matplotlib.org/>`_. Can be installed via
    ``pip install matplotlib``.
--  `brewer2mpl <https://github.com/jiffyclub/brewer2mpl>`_. Can be
-   installed via ``pip install brewer2mpl``.
+-  `palettable <https://github.com/jiffyclub/palettable>`_. Can be
+   installed via ``pip install palettable``.
 
 2. Usage
 ^^^^^^^^
 
-Examples and sample plots can be found `here <http://ngpy.org/post/mpltex/>`_.
+Examples and sample plots can be found `here <http://ngpy.org/2014/09/mpltex>`_.
 
 Following is a brief introduction. Just add one of ``mpltex`` decorators before your plot functions.
 
@@ -51,8 +51,9 @@ Following is a brief introduction. Just add one of ``mpltex`` decorators before 
 
 And it will create a plot ready for publishing in journals published by American Chemical Society (ACS).
 
-``mpltex`` also contains several helper functions to facilitate production of specific type of images.
-Following codes will produce a set of line arts with cycled line styles and line markers with the help of ``mpltex.linestyle_generator`` function.
+``mpltex`` also provides several helper functions to facilitate production of specific type of images.
+Following codes will produce a set of line arts with cycled line styles with the help of ``mpltex.linestyle_generator`` function.
+Note that since version 0.5, ``linestyles`` is a shorthand for ``linestyle_generator``.
 
 .. code:: python
 
@@ -67,6 +68,8 @@ Following codes will produce a set of line arts with cycled line styles and line
         # The default line style is iterating over
         # color, line, and marker with hollow types.
         linestyles = mpltex.linestyle_generator()
+        # equivalently
+        # linestyles = mpltex.linestyles()
 
         for i in range(number_of_lines):
             ax.plot(x[i], y[i], label=str(i), **linestyles.next())
@@ -78,19 +81,19 @@ Following codes will produce a set of line arts with cycled line styles and line
 
 **Available Decorators**
 
-* ``mpltex.acs_decorator``: output EPS images for publishing in ACS.
-* ``mpltex.rsc_decorator``: output EPS images for publishing in RSC.
+* ``mpltex.acs_decorator``: output EPS images for publishing in ACS (American Chemical Society).
+* ``mpltex.aps_decorator``: output EPS images for publishing in APS (American Physical Society).
+* ``mpltex.rsc_decorator``: output EPS images for publishing in RSC (Royal Society of Chemistry).
 * ``mpltex.presentation_decorator``: output PDF images for presentation slides (Keynote).
 * ``mpltex.web_decorator``: output PNG images for web pages.
 
 Contribute
 ----------
 
-Let me know what you think and wish. I can be reached through `email <mailto:liuyxpp@gmail.com>`_ or `other ways <http://ngpy.org/about>`_. Or fork the project at `github.com <https://github.com/liuyxpp/mpltex>`_ and file a pull request.
+Fork the project at `github.com <https://github.com/liuyxpp/mpltex>`_ and file a pull request.
 
 Links
 -----
 
-* `Yi-Xin Liu's personal website <http://ngpy.org>`_
+* `Yi-Xin Liu's personal academic website <http://ngpy.org>`_
 * `Development version at github.com <https://github.com/liuyxpp/mpltex>`_
-

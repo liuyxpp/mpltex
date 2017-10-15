@@ -3,6 +3,16 @@ mpltex Changelog
 
 Here you can see the full list of changes between each ``mpltex`` release.
 
+Version 0.5
+-----------
+
+* Replace ``brewer2mpl`` with ``palettable``
+* Add color schemes tableau_10 and tableau_20
+* Change default color scheme to tableau_10
+* Remove ``nextlinestyle``
+* Add ``linestyles`` as a short name for ``linestyle_generator``
+* Add a tutorial jupyter notebook
+
 Version 0.4.1
 -------------
 

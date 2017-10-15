@@ -12,3 +12,6 @@ mpltex.egg-info/*
 tests/*.png
 tests/*.pdf
 tests/*.eps
+tutorial/*.png
+tutorial/*.pdf
+tutorial/*.eps
