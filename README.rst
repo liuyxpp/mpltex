@@ -4,8 +4,9 @@ mpltex
 ``mpltex`` is a python package for producing publication quality images using ``matplotlib``.
 Inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplotlib <https://github.com/olgabot/prettyplotlib>`_.
 
-The internal ``matplotlib`` color cycle is replaced by ColorBrewer Set1 scale which looks less saturated and more pleasing to eyes.
-For more information on ColorBrewer, see `a flash-based interactive map <http://colorbrewer2.org/>`_ and `a quick visual reference to all ColorBrewer scales <http://bl.ocks.org/mbostock/5577023>`_.
+The internal ``matplotlib`` color cycle is replaced by Tableau classic 10 color scheme which looks less saturated and more pleasing to eyes.
+Other available color schemes for multi-line plots are ColorBrewer Set 1 and Tableau classic 20.
+For more information on these color schemes, see `documentation of palettable <https://jiffyclub.github.io/palettable>`_.
 
 ``mpltex`` also provide a way to generate highly configurable line styles with colors, line types, and line markers.
 Hollow markers are supported.
@@ -32,7 +33,7 @@ Quickstart
 
 Examples and sample plots can be found `here <http://ngpy.org/2014/09/mpltex>`_.
 
-Following is a brief introduction. Just add one of ``mpltex`` decorators before your plot functions.
+To use `mpltex`, just add one of ``mpltex`` decorators before your plot functions.
 
 .. code:: python
 
@@ -51,6 +52,14 @@ Following is a brief introduction. Just add one of ``mpltex`` decorators before 
 
 And it will create a plot ready for publishing in journals published by American Chemical Society (ACS).
 
+**Available Decorators**
+
+* ``mpltex.acs_decorator``: output EPS images for publishing in ACS (American Chemical Society).
+* ``mpltex.aps_decorator``: output EPS images for publishing in APS (American Physical Society).
+* ``mpltex.rsc_decorator``: output EPS images for publishing in RSC (Royal Society of Chemistry).
+* ``mpltex.presentation_decorator``: output PDF images for presentation slides (Keynote).
+* ``mpltex.web_decorator``: output PNG images for web pages.
+
 ``mpltex`` also provides several helper functions to facilitate production of specific type of images.
 Following codes will produce a set of line arts with cycled line styles with the help of ``mpltex.linestyle_generator`` function.
 Note that since version 0.5, ``linestyles`` is a shorthand for ``linestyle_generator``.
@@ -67,7 +76,7 @@ Note that since version 0.5, ``linestyles`` is a shorthand for ``linestyle_gener
 
         # The default line style is iterating over
         # color, line, and marker with hollow types.
-        linestyles = mpltex.linestyle_generator()
+        linestyles = mpltex.linestyles()
         # equivalently
         # linestyles = mpltex.linestyles()
 
@@ -78,14 +87,6 @@ Note that since version 0.5, ``linestyles`` is a shorthand for ``linestyle_gener
         ax.legend(loc='best')  # show legend in a best location
         fig.tight_layout(pad=0.1)  # make layout as tight as possible
         fig.savefig('/path/to/save/fig/figname')
-
-**Available Decorators**
-
-* ``mpltex.acs_decorator``: output EPS images for publishing in ACS (American Chemical Society).
-* ``mpltex.aps_decorator``: output EPS images for publishing in APS (American Physical Society).
-* ``mpltex.rsc_decorator``: output EPS images for publishing in RSC (Royal Society of Chemistry).
-* ``mpltex.presentation_decorator``: output PDF images for presentation slides (Keynote).
-* ``mpltex.web_decorator``: output PNG images for web pages.
 
 Contribute
 ----------
