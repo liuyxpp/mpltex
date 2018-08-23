@@ -48,7 +48,7 @@ def test_plot_scatter():
     for i in range(8):
         y = np.random.normal(size=10).cumsum()
         x = np.arange(10)
-        ax.plot(x, y, label=str(i), **linestyle.next())
+        ax.plot(x, y, label=str(i), **next(linestyle))
 
     ax.locator_params(nbins=5)
     ax.set_xlabel('Number of steps')
@@ -60,5 +60,5 @@ def test_plot_scatter():
 
 
 if __name__ == '__main__':
-    test_plot()
-    # test_plot_scatter()
+    # test_plot()
+    test_plot_scatter()

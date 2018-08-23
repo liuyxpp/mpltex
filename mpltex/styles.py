@@ -52,7 +52,7 @@ def linestyle_generator(colors=_colors, lines=_lines,
     Usage::
 
       linestyles = linestyle_generator()
-      linestyle = linestyles.next()
+      linestyle = next(linestyles)
 
     Note that all inputs should be iterable objects.
     To exclude one style, just pass empty list or ``None`` to the corresponding argument.
@@ -98,9 +98,10 @@ def linestyle_generator(colors=_colors, lines=_lines,
 
     while True:
         if not is_nothing:
-            color = color_cycle.next()
-            linestyle = line_cycle.next()
-            marker, hollow = marker_cycle.next()
+            # Use next() instead of .next to work with both Python 2 & 3
+            color = next(color_cycle)
+            linestyle = next(line_cycle)
+            marker, hollow = next(marker_cycle)
             if hollow is None:  # only filled markers
                 mew = 1
                 mec = color

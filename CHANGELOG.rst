@@ -3,6 +3,11 @@ mpltex Changelog
 
 Here you can see the full list of changes between each ``mpltex`` release.
 
+Version 0.6
+-----------
+
+* Add Python 3 compatibility
+
 Version 0.5.1
 -------------
 

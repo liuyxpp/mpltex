@@ -40,7 +40,7 @@ To use `mpltex`, just add one of ``mpltex`` decorators before your plot function
     import mpltex
 
     @mpltex.acs_decorator
-    def your_plot():
+    def myplot():
         # plot images by matplotlib ...
 
         # Save the image. Give a file name without extension.
@@ -48,7 +48,7 @@ To use `mpltex`, just add one of ``mpltex`` decorators before your plot function
         fig.save_fig('/path/to/save/fig/figname')
 
     # Then use your_plot in a normal way.
-    your_plot()
+    myplot()
 
 And it will create a plot ready for publishing in journals published by American Chemical Society (ACS).
 
@@ -70,7 +70,7 @@ Note that since version 0.5, ``linestyles`` is a shorthand for ``linestyle_gener
     import mpltex
 
     @mpltex.acs_decorator
-    def your_plot():
+    def myplot():
         # ...   # generate data x and y
         fig, ax = plt.subplots(111)
 
@@ -78,10 +78,10 @@ Note that since version 0.5, ``linestyles`` is a shorthand for ``linestyle_gener
         # color, line, and marker with hollow types.
         linestyles = mpltex.linestyles()
         # equivalently
-        # linestyles = mpltex.linestyles()
+        # linestyles = mpltex.linestyle_generator()
 
         for i in range(number_of_lines):
-            ax.plot(x[i], y[i], label=str(i), **linestyles.next())
+            ax.plot(x[i], y[i], label=str(i), **next(linestyles)
 
         ax.locator_params(nbins=5)  # limit the number of major ticks
         ax.legend(loc='best')  # show legend in a best location
