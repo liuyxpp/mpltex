@@ -31,7 +31,7 @@ Quickstart
 2. Usage
 ^^^^^^^^
 
-Examples and sample plots can be found `here <http://ngpy.org/2014/09/mpltex>`_.
+Examples and sample plots can be found `here <http://www.yxliu.group/2014/09/mpltex>`_.
 
 To use `mpltex`, just add one of ``mpltex`` decorators before your plot functions.
 
@@ -96,5 +96,5 @@ Fork the project at `github.com <https://github.com/liuyxpp/mpltex>`_ and file a
 Links
 -----
 
-* `Yi-Xin Liu's personal academic website <http://ngpy.org>`_
+* `Yi-Xin Liu's personal academic website <http://www.yxliu.group>`_
 * `Development version at github.com <https://github.com/liuyxpp/mpltex>`_
