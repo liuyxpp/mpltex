@@ -3,6 +3,11 @@ mpltex Changelog
 
 Here you can see the full list of changes between each ``mpltex`` release.
 
+Version 0.6.1
+-------------
+
+* Update homepage URL from http://www.ngpy.org to http://www.yxliu.group.
+
 Version 0.6
 -----------
 
