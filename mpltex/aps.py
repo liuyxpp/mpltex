@@ -4,7 +4,7 @@ aps.py
 ======
 
 Context decorator for producing figures which is ready to publish
-in American Chemical Society.
+in American Physical Society.
 
 EPS format for image file are used, because it is high quality and working
 in actual physical size rahter than pixel unit.
@@ -75,6 +75,15 @@ _params = {'font.family': 'sans-serif',
            'lines.markersize': 3,
            # 'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
+
+           # Revert some properties to mpl v1 which is more suitable for publishing
+           'axes.autolimit_mode': 'round_numbers',
+           'axes.xmargin': 0,
+           'axes.ymargin': 0,
+           'xtick.direction': 'in',
+           'xtick.top': True,
+           'ytick.direction' : 'in',
+           'ytick.right': True,
            }
 
 aps_decorator = MPLdecorator(_params)

@@ -8,13 +8,9 @@ import mpltex
 
 import numpy as np
 
-
-@mpltex.presentation_decorator
-def test_plot():
+def plot(ax):
     # Set the random seed for consistency
     np.random.seed(12)
-
-    fig, ax = plt.subplots(1)
 
     # Show the whole color range
     for i in range(8):
@@ -27,8 +23,50 @@ def test_plot():
     ax.set_ylabel('Distance')
     ax.legend(loc='best', ncol=4)
 
-    fig.tight_layout(pad=0.1)
-    fig.savefig('test_plot')
+
+@mpltex.presentation_decorator
+def test_plot_presentation():
+    fig, ax = plt.subplots(1)
+    plot(ax)
+    fig.tight_layout(pad=0.35)
+    fig.savefig('test_plot_presentation')
+    plt.close()
+
+
+@mpltex.acs_decorator
+def test_plot_acs():
+    fig, ax = plt.subplots(1)
+    plot(ax)
+    fig.tight_layout(pad=0.35)
+    fig.savefig('test_plot_acs')
+    plt.close()
+
+
+@mpltex.rsc_decorator
+def test_plot_aps():
+    fig, ax = plt.subplots(1)
+    plot(ax)
+    fig.tight_layout(pad=0.35)
+    fig.savefig('test_plot_aps')
+    plt.close()
+
+
+@mpltex.aps_decorator
+def test_plot_rsc():
+    fig, ax = plt.subplots(1)
+    plot(ax)
+    fig.tight_layout(pad=0.35)
+    fig.savefig('test_plot_aps')
+    plt.close()
+
+
+@mpltex.web_decorator
+def test_plot_web():
+    fig, ax = plt.subplots(1)
+    plot(ax)
+    fig.tight_layout(pad=0.35)
+    fig.savefig('test_plot_web')
+    plt.close()
 
 
 @mpltex.web_decorator
@@ -55,10 +93,14 @@ def test_plot_scatter():
     ax.set_ylabel('Distance')
     ax.legend(loc='best', ncol=4)
 
-    fig.tight_layout(pad=0.1)
+    fig.tight_layout(pad=0.35)
     fig.savefig('test_special_custom_linestyle_generator')
 
 
 if __name__ == '__main__':
-    # test_plot()
+    test_plot_presentation()
+    test_plot_acs()
+    test_plot_rsc()
+    test_plot_web()
+    test_plot_aps()
     test_plot_scatter()

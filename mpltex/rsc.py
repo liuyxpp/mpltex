@@ -79,6 +79,15 @@ _params = {'font.family': 'sans-serif',
            'lines.markersize': 4,
            # 'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
+
+           # Revert some properties to mpl v1 which is more suitable for publishing
+           'axes.autolimit_mode': 'round_numbers',
+           'axes.xmargin': 0,
+           'axes.ymargin': 0,
+           'xtick.direction': 'in',
+           'xtick.top': True,
+           'ytick.direction' : 'in',
+           'ytick.right': True,
            }
 
 rsc_decorator = MPLdecorator(_params)

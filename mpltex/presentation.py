@@ -85,7 +85,6 @@ _params = {'font.family': 'sans-serif',
            # 'xtick.minor.pad' : 4,
            # 'xtick.color' : k,
            'xtick.labelsize': 'medium',
-           # 'xtick.direction' : 'in',
 
            'ytick.major.size': 6,
            # 'ytick.minor.size' : 2,
@@ -95,12 +94,20 @@ _params = {'font.family': 'sans-serif',
            # 'ytick.minor.pad' : 4,
            # 'ytick.color' : k,
            'ytick.labelsize': 'medium',
-           # 'ytick.direction' : 'in',
 
            'lines.linewidth': 1.5,
            'lines.markersize': 6,
            # 'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
+
+           # Revert some properties to mpl v1 which is more suitable for publishing
+           'axes.autolimit_mode': 'round_numbers',
+           'axes.xmargin': 0,
+           'axes.ymargin': 0,
+           'xtick.direction': 'in',
+           'xtick.top': True,
+           'ytick.direction' : 'in',
+           'ytick.right': True,
            }
 
 presentation_decorator = MPLdecorator(_params)
