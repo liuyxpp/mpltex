@@ -1,7 +1,7 @@
 mpltex
 ======
 
-``mpltex`` is a python package for producing publication quality images using ``matplotlib``, which is inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplotlib <https://github.com/olgabot/prettyplotlib>`_. Tutorial can be found `here <http://www.yxliu.group/2014/09/mpltex>`_.
+``mpltex`` is a python package for producing publication quality images using ``matplotlib``, which is inspired by `Olga Botvinnik <http://olgabotvinnik.com/>`_'s python package `prettyplotlib <https://github.com/olgabot/prettyplotlib>`_. Tutorial can be found at `www.yxliu.group <http://www.yxliu.group/2014/09/mpltex>`_.
 
 The internal ``matplotlib`` color cycle is replaced by Tableau classic 10 color scheme which looks less saturated and more pleasing to eyes.
 The colors of this scheme is reordered, which is different from current version of ``matplotlib`` v3.
@@ -11,7 +11,7 @@ For more information on these color schemes, see `documentation of palettable <h
 ``mpltex`` also provide a way to generate highly configurable line styles with colors, line types, and line markers.
 Hollow markers are supported.
 
-``mpltex`` should work properly both in Python 2 and 3. If not, please file an issue `here <https://github.com/liuyxpp/mpltex>`_.
+``mpltex`` should work properly both in Python 2 and 3. If not, please file an issue at `Github <https://github.com/liuyxpp/mpltex>`_.
 
 Quickstart
 ----------
