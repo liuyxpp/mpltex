@@ -13,6 +13,7 @@ PDF format for image file are used, because it correctly uses sans-serif fonts.
 from .general import MPLdecorator
 from .layout import point2inch, GOLDEN_RATIO
 from .colors import default_color_cycler
+from .styles import latex_preamble
 
 __all__ = ['presentation_decorator', ]
 
@@ -41,11 +42,7 @@ _params = {'font.family': 'sans-serif',
            'font.weight': 'normal',
            'text.usetex': True,
            # To force LaTeX use Helvetica fonts.
-           'text.latex.preamble': [r'\usepackage{siunitx}',
-                                   r'\sisetup{detect-all}',
-                                   r'\usepackage{helvet}',
-                                   r'\usepackage[eulergreek,EULERGREEK]{sansmath}',
-                                   r'\sansmath'],
+           'text.latex.preamble': latex_preamble,
            'axes.prop_cycle': default_color_cycler,
            'axes.labelsize': 'medium',
            'axes.labelweight': 'normal',
@@ -85,7 +82,6 @@ _params = {'font.family': 'sans-serif',
            # 'xtick.minor.pad' : 4,
            # 'xtick.color' : k,
            'xtick.labelsize': 'medium',
-           # 'xtick.direction' : 'in',
 
            'ytick.major.size': 6,
            # 'ytick.minor.size' : 2,
@@ -95,12 +91,20 @@ _params = {'font.family': 'sans-serif',
            # 'ytick.minor.pad' : 4,
            # 'ytick.color' : k,
            'ytick.labelsize': 'medium',
-           # 'ytick.direction' : 'in',
 
            'lines.linewidth': 1.5,
            'lines.markersize': 6,
            # 'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
+
+           # Revert some properties to mpl v1 which is more suitable for publishing
+           'axes.autolimit_mode': 'round_numbers',
+           'axes.xmargin': 0,
+           'axes.ymargin': 0,
+           'xtick.direction': 'in',
+           'xtick.top': True,
+           'ytick.direction' : 'in',
+           'ytick.right': True,
            }
 
 presentation_decorator = MPLdecorator(_params)

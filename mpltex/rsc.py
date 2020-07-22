@@ -17,6 +17,7 @@ in actual physical size rahter than pixel unit.
 from .general import MPLdecorator
 from .colors import default_color_cycler
 from .layout import GOLDEN_RATIO
+from .styles import latex_preamble
 
 __all__ = ['rsc_decorator', ]
 
@@ -38,11 +39,7 @@ _params = {'font.family': 'sans-serif',
            'font.size': 7,
            'text.usetex': True,
            # To force LaTeX use Helvetica fonts.
-           'text.latex.preamble': [r'\usepackage{siunitx}',
-                                   r'\sisetup{detect-all}',
-                                   r'\usepackage{helvet}',
-                                   r'\usepackage[eulergreek,EULERGREEK]{sansmath}',
-                                   r'\sansmath'],
+           'text.latex.preamble': latex_preamble,
            'axes.prop_cycle': default_color_cycler,
            'axes.labelsize': 7,
            'axes.linewidth': 1,
@@ -79,6 +76,15 @@ _params = {'font.family': 'sans-serif',
            'lines.markersize': 4,
            # 'lines.markeredgewidth' : 0,
            # 0 will make line-type markers, such as '+', 'x', invisible
+
+           # Revert some properties to mpl v1 which is more suitable for publishing
+           'axes.autolimit_mode': 'round_numbers',
+           'axes.xmargin': 0,
+           'axes.ymargin': 0,
+           'xtick.direction': 'in',
+           'xtick.top': True,
+           'ytick.direction' : 'in',
+           'ytick.right': True,
            }
 
 rsc_decorator = MPLdecorator(_params)

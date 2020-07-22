@@ -3,6 +3,14 @@ mpltex Changelog
 
 Here you can see the full list of changes between each ``mpltex`` release.
 
+Version 0.7
+-----------
+
+* Fix a warning of text.latex.preamble.
+* Now should be fully compatible with Python 3 and Should also work with Python 2.
+* Revert some default format to MPL v1 for higher MPL versions.
+* Released at July 22nd, 2020.
+
 Version 0.6.1
 -------------
 
