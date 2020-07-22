@@ -11,9 +11,11 @@ import itertools
 
 from .colors import almost_black, tableau_10
 
-__all__ = ['colors', 'lines',
+__all__ = ['latex_preamble', 'colors', 'lines',
            'markers', 'markersh', 'marker_types',
            'linestyle_generator', 'linestyles']
+
+latex_preamble = r"\usepackage{siunitx}\sisetup{detect-all}\usepackage{helvet}\usepackage[eulergreek,EULERGREEK]{sansmath}\sansmath"
 
 _colors = tableau_10
 colors = itertools.cycle(_colors)

@@ -19,8 +19,8 @@ def plot(ax):
 
         ax.plot(x, y, label=str(i))
 
-    ax.set_xlabel('Number of steps')
-    ax.set_ylabel('Distance')
+    ax.set_xlabel('$\\text{Number of steps,}\; N$')
+    ax.set_ylabel('$\\text{Distance,}\; \lambda$')
     ax.legend(loc='best', ncol=4)
 
 
